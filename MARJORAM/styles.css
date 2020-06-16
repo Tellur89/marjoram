@@ -1,0 +1,153 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  text-align: center;
+}
+
+body {
+  background: url('background.png') no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+.header{
+  height: 90vh;
+  background-color: #1d2731;
+  /* background: url('lup.jpg'); */
+  background-size: cover;
+  background-position: top;
+  margin: 2rem 8rem;
+  padding-top: 3rem;
+  box-shadow: 2rem 2rem 15rem black;
+  border-radius: 1rem;
+  position: relative;
+  opacity: .8;
+}
+
+
+
+
+
+
+
+
+h2 {
+  font-family: 'Gentium Basic', serif;
+  color: white;
+  font-weight: bold;
+  font-size: 5rem;
+  text-shadow: 0.5rem 0.5rem 1rem black;
+  display: block;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+h4 {
+  font-family: 'Gentium Basic', serif;
+  color: #aaaaaa;
+  font-size: 2rem;
+  display: block;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+
+
+}
+
+/* animation for the text */
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(8rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-8rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.header--back{
+  position: absolute;
+}
+
+.angel,
+.wh,
+.axe,
+.duke {
+  display: inline;
+  height: 17rem;
+  transition: all .6s;
+  position: relative;
+  margin-top: 5rem;
+  margin-left: .2rem;
+
+}
+
+.angel:hover,
+.wh:hover,
+.axe:hover,
+.duke:hover {
+  transform: translateY(-.4rem);
+  box-shadow: rgba(0,0,0,.1) 0 2rem 1.2rem;
+}
+
+.angel:active,
+.wh:active,
+.axe:active,
+.duke:active {
+  transform: translateY(.2rem);
+}
+
+
+
+.angel::after,
+.wh::after,
+.axe::after,
+.duke::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .3s;
+  backface-visibility: hidden;
+  border-radius: 10rem;
+}
+
+.angel--white::after,
+.wh--white:after,
+.axe--white::after,
+.duke--white::after {
+  background-color: #fff;
+}
+
+.angel:hover::after,
+.wh:hover::after,
+.axe:hover::after,
+.duke:hover::after {
+  transform: scaleX(5) scaleY(5);
+  /* opacity: 0; */
+}
